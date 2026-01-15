@@ -6,8 +6,8 @@ pipeline {
         stage('build') {
             steps {
                 ansiColor('xterm') {
-                    stage "\u001B[31mI'm Red\u001B[0m Now not"
-                    sh 'echo "Hello World"'
+                    sh 'echo -e "\\033[31mI\'m Red\\033[0m Now not"'
+                    sh 'echo -e "\\033[31mHello World"'
                     sh '''
                         echo "Multiline shell steps works too!"
                         ls -lah
